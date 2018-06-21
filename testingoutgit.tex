@@ -1,0 +1,34 @@
+\documentclass{amsart}
+\usepackage{preamble}
+\begin{document}
+
+\noindent\textbf{Example}. The following figure demonstrates how to add vectors in $\R^{2}$.
+\begin{equation*}
+  \begin{tikzpicture}[scale=2]
+    \draw[->] (0,0)-- node [below right] {$v$}(1,1);
+    \draw[->] (1,1)-- node [right] {$w$} (1,2);
+    \draw (0,0)--node [above left] {$v+w$}(1,2);
+  \end{tikzpicture}
+\end{equation*}
+
+\noindent \textbf{Problem}. Puerto Viejo de Talamanca beach (in Costa Rica) is modeled by the $x$-$y$ plane. The $y$ axis is parallel to the shore line, and the sand occupies the region $0\le x\le 1$ and the water occupies the region $x>1$.
+  \begin{equation*}
+    \begin{tikzpicture}[xscale=1.5]
+      \draw[->] (0,-1) node [below] {$x=0$}--(0,2) node [above] {$y$};
+
+      \node[label=left:{$y=1$}] at (0,-0.3) {$\bullet$};
+      \draw (1,-1) node [below] {$x=1$}--(1,2);
+      \fill[pattern={dots}, pattern color=yellow,opacity=0.5] (0,-1) rectangle (1,2);
+      \fill[pattern={north west lines}, pattern color=blue,opacity=0.5] (1,-1) rectangle (3,2);
+
+      \draw[variable=\x, domain=0:0.530769,dashed,->] plot (\x,{1/(1-\x)-1.3});
+    \end{tikzpicture}
+  \end{equation*}
+  Derek is visiting this beach with his little cousin. If Derek starts
+  at $x=0$, $y=1$ (shown above) and starts running towards the beach
+  in such a way that his trajectory $y=y(x)$ satisfies
+  $\frac{dy}{dx}=y^{2}$, at what $y$ coordinate will Derek enter the
+  water?
+
+
+\end{document}
